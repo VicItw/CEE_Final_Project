@@ -148,7 +148,7 @@ window.onload = function() {
             if (cooldownRemainingTime <= 0) {
             clearInterval(cooldownCountdownInterval); // Stop the cooldown countdown when it reaches zero
             btn.disabled = false;
-            btn.textContent = "Click Me";
+            btn.textContent = "x10 Ready";
             btn.style.backgroundColor = "#007bff"; // Reset the color to default after cooldown
             }
         }, 1000);
