@@ -4,6 +4,10 @@ body {
   font-family: "Mitr", sans-serif;
 }
 
+.container {
+  text-align: center;
+}
+
 #app-name {
   font-size: 2em;
   font-weight: bold;
