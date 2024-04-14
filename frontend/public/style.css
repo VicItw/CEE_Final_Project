@@ -2,6 +2,7 @@
 
 body {
   font-family: "Mitr", sans-serif;
+  background:  linear-gradient(to top, #facece, #ffffff);
 }
 
 .container {
@@ -9,13 +10,27 @@ body {
 }
 
 #app-name {
-  font-size: 2em;
+  font-size: 6.5em;
   font-weight: bold;
-  margin: 0;
+  margin: 1% 0% -3% 0%;
   text-align: center;
 }
 
-section {
+#player-score {
+  font-size: 4em;
+  margin-bottom:  0%;
+}
+
+#cps {
+  font-size: 2em;
+  margin-bottom:  0%;
+}
+
+
+
+
+
+/* section {
   margin: 20px 0;
 }
 
@@ -150,4 +165,4 @@ section {
   100% {
     background: #ff0000;
   }
-}
+} */
