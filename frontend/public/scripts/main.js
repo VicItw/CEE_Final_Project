@@ -85,6 +85,7 @@ window.onload = function() {
 
 
     var leaderboardData = [
+      //get when onLoad() and player click
         { name: "Player 1", score: 100 },
         { name: "Player 2", score: 80 },
         { name: "Player 3", score: 70 },
