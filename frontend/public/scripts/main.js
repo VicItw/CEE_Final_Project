@@ -24,6 +24,7 @@
 
 
 window.onload = function() {
+  // load in all the basic variables
     var img = document.getElementById("pop-img");
     var img_path = document.getElementById("pop-img").src; 
     var pop = document.getElementById("pop-img").src; 
@@ -36,7 +37,7 @@ window.onload = function() {
     var cpsCounter = document.getElementById("cps");
     var current = "popcat"
 
-    // click
+    // on click
     img.addEventListener('mousedown', function () {
         pop = img_path.replace("idle", "pop");
         img.src = pop;
@@ -54,6 +55,8 @@ window.onload = function() {
             img.src = img_path;
     })
 
+
+    // Click per second counter
     setInterval(function() {
         cpsCounter.innerHTML = clickCount + " cps";
         currentCPS = clickCount;
@@ -66,6 +69,8 @@ window.onload = function() {
         count.innerHTML = score;
     }
 
+
+    // Character selection
     var catButton = document.getElementById("cat-button")
     catButton.addEventListener('mousedown', function (){
         img.src = "res/Popcat_idle.png";
@@ -83,7 +88,7 @@ window.onload = function() {
         audio = new Audio("res/bonkAudio.mp3");
     });
 
-
+// ------------- Data from Backend------------------------------- 
     var leaderboardData = [
         { name: "Player 1", score: 100 },
         { name: "Player 2", score: 80 },
@@ -91,6 +96,7 @@ window.onload = function() {
         { name: "Player 4", score: 60 },
         { name: "Player 5", score: 50 }
       ];
+//-----------------------------------------------------------------
 
     // Function to populate the leaderboard with data
   function populateLeaderboard() {
@@ -111,7 +117,6 @@ window.onload = function() {
   var btn = document.getElementById("x10");
   btn.addEventListener('mousedown', function (){
     console.log("x10");
-    // Disable the button while it's active
     // Disable the button while it's active
     btn.disabled = true;
     hit = 10;
