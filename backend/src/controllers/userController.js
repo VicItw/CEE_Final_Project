@@ -37,12 +37,8 @@ export const updateScore = async (req, res) => {
 export const createUser = async (req, res) => {
   try {
     const newUser = new User(req.body);
-    if (User.find({name: newUser.name}).length === 0) {
-        await newUser.save();
-        res.status(200).json({ message: "OK" });
-    } else {
-        res.status(400).json({ message: "User name is already taken."})
-    }
+    await newUser.save();
+    res.status(200).json({ message: "OK" });
 
   } catch (err) {
     if (err.name === "ValidationError") {
