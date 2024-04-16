@@ -162,4 +162,15 @@ window.onload = function() {
     }, 1000);
     });
 
+    function login() {
+      var username = document.getElementById("username").value;
+      // Redirect to the URL including the username
+      window.location.href = "/" + username;
+      // Here you would typically send the username to the server for authentication
+      // and handle the redirection on the server-side after successful authentication.
+      // This JavaScript is just for demonstration purposes.
+      return false; // Prevent form submission
+  }
+    
+
 }

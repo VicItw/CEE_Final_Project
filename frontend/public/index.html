@@ -17,8 +17,9 @@
     <div class = "container">
       <p id="player-score">0</p>
       <p id="cps"> 0 cps</p>
-      <img src="res\Popcat_idle.png" alt="Popcat-idle" id ="pop-img" height="600px">
     </div>
+
+    <img src="res\Popcat_idle.png" alt="Popcat-idle" id ="pop-img" height="600px">
 
     <!-- Image buttons  -->
     <div class="side-buttons">
@@ -35,6 +36,20 @@
         <!-- Leaderboard items will be added here dynamically -->
       </ol>
     </div>
+
+    <!-- login interface -->
+    <div class="login-container">
+      <h2>Login</h2>
+      <form onsubmit="return login()">
+          <div class="form-group">
+              <label for="username">Username</label>
+              <input type="text" id="username" name="username" required>
+          </div>
+          <div class="form-group">
+              <input type="submit" value="Login">
+          </div>
+      </form>
+  </div>
 
 
     <!-- activity 9  -->
