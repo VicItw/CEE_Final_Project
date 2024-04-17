@@ -160,17 +160,42 @@ window.onload = function() {
         }, 1000);
         }
     }, 1000);
-    });
+  });
+  
 
-    function login() {
-      var username = document.getElementById("username").value;
-      // Redirect to the URL including the username
-      window.location.href = "/" + username;
-      // Here you would typically send the username to the server for authentication
-      // and handle the redirection on the server-side after successful authentication.
-      // This JavaScript is just for demonstration purposes.
-      return false; // Prevent form submission
+  const loginBtn = document.getElementById("login-btn");
+  const registerBtn = document.getElementById("register-btn");
+  const loginModal = document.getElementById("login-modal");
+  const RegisterModal = document.getElementById("register-modal");
+
+  function showLoginInterface() {
+    if (loginBtn.textContent == "Login") {
+      loginModal.style.display = "block";
+      loginBtn.textContent = "Close";
+      RegisterModal.style.display = "none";
+      registerBtn.textContent = "Register";
+    } 
+    else {
+      loginModal.style.display = "none";
+      loginBtn.textContent = "Login";
+    }
   }
-    
+  
+  function showRegisterInterface() {
+    if (registerBtn.textContent == "Register") {
+      RegisterModal.style.display = "block";
+      registerBtn.textContent = "Close";
+      loginModal.style.display = "none";
+      loginBtn.textContent = "Login";
+    } 
+    else {
+      RegisterModal.style.display = "none";
+      registerBtn.textContent = "Register";
+    }
+  }
+  
+  loginBtn.addEventListener("click", showLoginInterface);
+  registerBtn.addEventListener("click", showRegisterInterface);
+  
 
 }

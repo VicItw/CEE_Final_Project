@@ -105,7 +105,7 @@ body {
 }
 
 .login-container {
-  width: 20vw;
+  width: 15vw;
   max-width: 400px;
   position: absolute;
   top: 20px;
@@ -118,7 +118,9 @@ body {
 .login-container h2 {
   text-align: center;
 }
-.form-group {
+
+
+/* .form-group {
   margin-bottom: 20px;
 }
 .form-group label {
@@ -143,7 +145,9 @@ body {
 }
 .form-group input[type="submit"]:hover {
   background-color: #d0357b;
-}
+} */
+
+
 
 /* section {
   margin: 20px 0;

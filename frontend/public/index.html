@@ -7,7 +7,7 @@
   </head>
 
   <body>
-
+    <script type="module" src="scripts/main.js"></script>
     <!-- App name -->
     <section>
       <header><h1 id="app-name">PATCOP</h1></header>
@@ -39,18 +39,34 @@
     </div>
 
     <!-- login interface -->
-    <div class="login-container">
-      <h2>Login</h2>
-      <form onsubmit="return login()">
-          <div class="form-group">
-              <label for="username">Username</label>
-              <input type="text" id="username" name="username" required>
-          </div>
-          <div class="form-group">
-              <input type="submit" value="Login">
-          </div>
-      </form>
-  </div>
+    <div class = "login-container">
+      <div id="auth-buttons">
+        <button id="login-btn">Login</button>
+        <button id="register-btn">Register</button>
+      </div>
+      
+      <div id="login-modal" style="display: none;"> <h2>Login</h2>
+        <form id="login-form">
+          <label for="username">Username:</label>
+          <input type="text" id="login-username" name="username" required>
+          <label for="password">Password:</label>
+          <input type="password" id="login-password" name="password" required>
+          <button type="submit">Login</button>
+        </form>
+      </div>
+      
+      <div id="register-modal" style="display: none;"> <h2>Register</h2>
+        <form id="register-form">
+          <label for="username">Username:</label>
+          <input type="text" id="reg-username" name="username" required>
+          <label for="password">Password:</label>
+          <input type="password" id="reg-password" name="password" required>
+          <button type="submit">Register</button>
+        </form>
+      </div>
+    </div>
+    
+    
 
 
     <!-- activity 9  -->
@@ -97,6 +113,6 @@
       </table>
     </section> -->
 
-    <script type="module" src="scripts/main.js"></script>
+
   </body>
 </html>
