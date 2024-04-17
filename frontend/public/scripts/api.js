@@ -1,42 +1,42 @@
 import { BACKEND_URL } from "./config.js";
 
-export async function getItems() {
-  const items = await fetch(`${BACKEND_URL}/items`).then((res) => res.json());
-
-  return items;
+export async function getUser(name) {
+  const items = await fetch(`${BACKEND_URL}/users/${name}`).then((res) => res.json());
+  return items; //will return error if user is not available
 }
 
-export async function createItem(item) {
-  await fetch(`${BACKEND_URL}/items`, {
+export async function createUser(name,password) {
+  item = {
+    "name" : name,
+    "password" : password,
+    "score" : 0
+  }
+  const res = await fetch(`${BACKEND_URL}/users/createUser`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(item),
   });
+  return res.json; //return error if username is alr taken
 }
 
-export async function deleteItem(id, item) {
-  await fetch(`${BACKEND_URL}/items/${id}`, {
-    method: "DELETE",
+export async function getRank(id, item) {
+  const top = await fetch(`${BACKEND_URL}/users/rank`).then((res) => res.json());
+  return top;
+}
+
+export async function updateScore(name,score) {
+  item = {
+    "name" : name,
+    "score" : score
+  }
+  const res = await fetch(`${BACKEND_URL}/users/updateScore`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(item),
   });
-}
-
-export async function filterItems(filterName, lowerPrice, upperPrice) {
-  // TODO3: implement this function
-  // You may need to understand handleFilterItem() function in ./table.js before implementing this function.
-  return /* return the filted items */;
-}
-
-export async function getMembers() {
-  // TODO4: implement this function
-  return /* return all members */;
-}
-
-export async function createMember(member) {
-  // TODO4: implement this function
-}
-
-export async function deleteMember(id, item) {
-  // TODO4: implement this function
+  return res.json;
 }
