@@ -203,6 +203,7 @@ window.onload = function() {
 
   const loginForm = document.getElementById("login-form")
   loginForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
     const username = document.getElementById("login-username").value;
     const password = document.getElementById("login-password").value;
     console.log(username);
