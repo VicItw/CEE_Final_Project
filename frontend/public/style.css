@@ -2,8 +2,6 @@
 
 body {
   font-family: "Mitr", sans-serif;
-  height: 100%;
-  width: 100%;
   background:  linear-gradient(to top, #facece, #ffffff);
   margin: 0;
   padding: 0;
@@ -41,7 +39,7 @@ body {
 
 .side-buttons {
   position: fixed;
-  top: 50%;
+  top: 45%;
   transform: translateY(-50%);
   left: 0;
   padding: 20px;
@@ -68,13 +66,12 @@ body {
 
 .leaderboard {
   width: 15vw;
-
   position: fixed;
   top: 40%;
   transform: translateY(-5%);
   right: 0;
   padding: 20px;
-  font-size: 1vw;
+  font-size: 10;
   background-color: #fcc8e4;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
