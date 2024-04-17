@@ -1,6 +1,8 @@
 // import { handleCreateMember, populateMembers } from "./member.js";
 // import { fetchAndDrawTable, handleCreateItem, handleFilterItem } from "./table.js";
 
+import { getUser } from "./api.js";
+
 // import { getUser } from "./api";
 
 // document.addEventListener("DOMContentLoaded", () => {
@@ -199,37 +201,16 @@ window.onload = function() {
   loginBtn.addEventListener("click", showLoginInterface);
   registerBtn.addEventListener("click", showRegisterInterface);
 
-  loginForm.addEventListener("submit", (event) => {
-    event.preventDefault(); // Prevent default form submission
-  
-    const username = document.getElementById("username").value;
-    const password = document.getElementById("password").value;
-  
-    // Send login data (username and password) to the backend using Fetch API or Axios
-    fetch("/api/login", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ username, password }),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.success) {
-          // Login successful! Store token securely (e.g., local storage)
-          localStorage.setItem("authToken", data.token);
-          // Redirect to a protected page or display success message
-        } else {
-          // Login failed! Display error message
-        }
-      })
-      .catch((error) => {
-        console.error("Error logging in:", error);
-        // Handle errors appropriately (e.g., display generic error message)
-      });
+  const loginForm = document.getElementById("login-form")
+  loginForm.addEventListener("submit", async (event) => {
+    const username = document.getElementById("login-username").value;
+    const password = document.getElementById("login-password").value;
+    console.log(username);
+    console.log(password);
+    const user = await getUser(username);
+    console.log(user)
+    console.log(user.score)
+    console.log(user.password)
   });
-
-
-
-
-  // loginSubmit.addEventListener("click", getUser(loginUsername));
 
 }

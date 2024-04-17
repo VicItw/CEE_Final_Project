@@ -35,3 +35,9 @@ export const createUser = async (req, res) => {
       res.status(200).json({ message: "OK" });
     }
 };
+
+
+export const getUsers = async (req, res) => {
+  const users = await User.find();
+  res.status(200).json(users);
+};
