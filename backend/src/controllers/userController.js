@@ -6,7 +6,7 @@ export const getUser = async (req, res) => { //ถ้าหาเจอ return j
   if(user.length === 0){
     res.status(400).json({error : "This Username is not available"});
   }
-  res.status(200).json(user);
+  else res.status(200).json(user);
 };
 
 

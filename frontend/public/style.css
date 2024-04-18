@@ -5,19 +5,23 @@ body {
   background:  linear-gradient(to top, #facece, #ffffff);
   margin: 0;
   padding: 0;
+  height: 100vh;
 }
 
 .container {
   text-align: center;
 }
 
+#cps {
+  margin-bottom: 100em;
+}
 
 #pop-img{
-  max-width: 50vh;
+  max-width: 25vw;
   height: auto;
   display: block; /* Remove extra space below inline images */
   margin: 0 auto; /* Center the image horizontally */
-  bottom: 0;
+
 }
 
 #app-name {
@@ -39,7 +43,7 @@ body {
 
 .side-buttons {
   position: fixed;
-  top: 45%;
+  top: 55%;
   transform: translateY(-50%);
   left: 0;
   padding: 20px;
@@ -110,7 +114,7 @@ body {
   position: absolute;
   top: 20px;
   right: 20px;
-  padding: 20px;
+  padding: 10px;
   background-color: #fff;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -135,6 +139,54 @@ body {
 
 #register-password {
   margin-bottom: 10px;
+}
+
+.login-container button {
+  margin-bottom: 10px;
+  width: 7vw;
+  max-width: 50vw;
+  height: 5vh;
+  max-height: 100px;
+  padding: 10px;
+  border: none;
+  background-color: #ff76b4;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 2vh;
+  cursor: pointer;
+}
+
+.login-container button:hover {
+  background-color: #d0357b;
+}
+
+.user-container button {
+  margin-bottom: 10px;
+  width: 7vw;
+  max-width: 50vw;
+  height: 5vh;
+  max-height: 100px;
+  padding: 10px;
+  border: none;
+  background-color: #ff76b4;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 2vh;
+  cursor: pointer;
+}
+
+.user-container button:hover {
+  background-color: #d0357b;
+}
+
+.user-container {
+  position: fixed;
+  top: 0%;
+  font-size: 80%;
+  max-width: 30vw;
+  padding: 10px;
 }
 
 

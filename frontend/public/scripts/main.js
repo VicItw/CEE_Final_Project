@@ -1,7 +1,8 @@
 // import { handleCreateMember, populateMembers } from "./member.js";
 // import { fetchAndDrawTable, handleCreateItem, handleFilterItem } from "./table.js";
 
-import { getUser } from "./api.js";
+import { updateScore } from "./api.js";
+import { showLoginInterface, showRegisterInterface, login, register, update, refreshPage} from "./login.js";
 
 // import { getUser } from "./api";
 
@@ -26,20 +27,19 @@ import { getUser } from "./api.js";
 //   });
 // });
 
-
 window.onload = function() {
   // load in all the basic variables
     var img = document.getElementById("pop-img");
     var img_path = document.getElementById("pop-img").src; 
     var pop = document.getElementById("pop-img").src; 
-    var count = document.getElementById("player-score");
-    var score = 0;
+    const count = document.getElementById("player-score");
     var clickCount = 0;
     var currentCPS = 0;
     var audio = new Audio("res/catAudio.mp3");
     var hit = 1;
     var cpsCounter = document.getElementById("cps");
     var current = "popcat"
+    
 
     // on click
     img.addEventListener('mousedown', function () {
@@ -66,9 +66,11 @@ window.onload = function() {
         currentCPS = clickCount;
         clickCount = 0; // Reset click count for the next interval
         img.src = img_path;
-      }, 1000); // Update CPS every 1000ms (1 second)
+        update()
+    }, 1000); // Update CPS every 1000ms (1 second)
 
     function increaseScore(hit) {
+        var score = parseInt(count.textContent);
         score += hit;
         count.innerHTML = score;
     }
@@ -169,49 +171,20 @@ window.onload = function() {
 
   const loginBtn = document.getElementById("login-btn");
   const registerBtn = document.getElementById("register-btn");
-  const loginModal = document.getElementById("login-modal");
-  const RegisterModal = document.getElementById("register-modal");
 
-  function showLoginInterface() {
-    if (loginBtn.textContent == "Login") {
-      loginModal.style.display = "block";
-      loginBtn.textContent = "Close";
-      RegisterModal.style.display = "none";
-      registerBtn.textContent = "Register";
-    } 
-    else {
-      loginModal.style.display = "none";
-      loginBtn.textContent = "Login";
-    }
-  }
-  
-  function showRegisterInterface() {
-    if (registerBtn.textContent == "Register") {
-      RegisterModal.style.display = "block";
-      registerBtn.textContent = "Close";
-      loginModal.style.display = "none";
-      loginBtn.textContent = "Login";
-    } 
-    else {
-      RegisterModal.style.display = "none";
-      registerBtn.textContent = "Register";
-    }
-  }
-  
   loginBtn.addEventListener("click", showLoginInterface);
   registerBtn.addEventListener("click", showRegisterInterface);
 
   const loginForm = document.getElementById("login-form")
   loginForm.addEventListener("submit", async (event) => {
     event.preventDefault();
-    const username = document.getElementById("login-username").value;
-    const password = document.getElementById("login-password").value;
-    console.log(username);
-    console.log(password);
-    const user = await getUser(username);
-    console.log(user)
-    console.log(user.score)
-    console.log(user.password)
+    login();
+  });
+
+  const registerForm = document.getElementById("register-form")
+  registerForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    register();
   });
 
 }
