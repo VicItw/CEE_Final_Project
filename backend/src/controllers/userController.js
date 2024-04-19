@@ -11,7 +11,7 @@ export const getUser = async (req, res) => { //ถ้าหาเจอ return j
 
 export const getRank = async (req, res) => {
   try {
-    const rankedUser = await User.find().sort({ score: -1 }).limit(5);
+    const rankedUser = await User.find().sort({ score: -1 }).limit(10);
     res.status(200).json(rankedUser)
   }
   catch (err) {
