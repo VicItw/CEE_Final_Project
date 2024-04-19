@@ -2,7 +2,6 @@ import User from "../models/userModel.js";
 
 export const getUser = async (req, res) => { //ถ้าหาเจอ return json หาไม่เจอ return 400
   const user = await User.find({name: req.params.user});
-  console.log(user.length);
   if(user.length === 0){
     res.status(400).json({error : "This Username is not available"});
   }
@@ -11,8 +10,13 @@ export const getUser = async (req, res) => { //ถ้าหาเจอ return j
 
 
 export const getRank = async (req, res) => {
-  const rankedUser = await User.find({ $sort: { score: 1 } }, { $limit: 10 });
-  res.status(200).json(rankedUser)
+  try {
+    const rankedUser = await User.find({ $sort: { score: -1 } }, { $limit: 5});
+    res.status(200).json(rankedUser)
+  }
+  catch (err) {
+    res.status(500).json({ error: "Internal server error." });
+  }
 }
 
 export const updateScore = async (req, res) => {

@@ -1,4 +1,5 @@
 import { createUser, getUser, updateScore } from "./api.js";
+import { populateLeaderboard } from "./leaderboard.js";
 
 const loginBtn = document.getElementById("login-btn");
 const registerBtn = document.getElementById("register-btn");
@@ -95,6 +96,7 @@ export async function update() {
     var score = parseInt(count.textContent);
     // console.log("update user : ", player, " score : ", score);
     updateScore(player, score);
+    populateLeaderboard();
 }
 
 export async function refreshPage() {

@@ -6,7 +6,7 @@ export async function getUser(name) {
 }
 
 export async function getUsers() {
-  const users = await fetch(`${BACKEND_URL}/items`).then((r) => r.json());
+  const users = await fetch(`${BACKEND_URL}/users`).then((r) => r.json());
   return users;
 }
 
@@ -26,7 +26,7 @@ export async function createUser(name,password) {
   return res.json; //return error if username is alr taken
 }
 
-export async function getRank(id, item) {
+export async function getRank() {
   const top = await fetch(`${BACKEND_URL}/users/rank`).then((res) => res.json());
   return top;
 }

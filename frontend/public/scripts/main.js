@@ -1,31 +1,7 @@
-// import { handleCreateMember, populateMembers } from "./member.js";
-// import { fetchAndDrawTable, handleCreateItem, handleFilterItem } from "./table.js";
 
-import { updateScore } from "./api.js";
+import { populateLeaderboard } from "./leaderboard.js";
 import { showLoginInterface, showRegisterInterface, login, register, update, refreshPage} from "./login.js";
 
-// import { getUser } from "./api";
-
-// document.addEventListener("DOMContentLoaded", () => {
-//   fetchAndDrawTable();
-
-//   populateMembers();
-
-//   const addItemButton = document.getElementById("add-newrow");
-//   addItemButton.addEventListener("click", () => {
-//     handleCreateItem();
-//   });
-
-//   const filterButton = document.getElementById("filter-button");
-//   filterButton.addEventListener("click", () => {
-//     handleFilterItem();
-//   });
-
-//   const addMemberButton = document.getElementById("add-member");
-//   addMemberButton.addEventListener("click", () => {
-//     handleCreateMember();
-//   });
-// });
 
 window.onload = function() {
   // load in all the basic variables
@@ -94,29 +70,6 @@ window.onload = function() {
         audio = new Audio("res/bonkAudio.mp3");
     });
 
-// ------------- Data from Backend------------------------------- 
-    var leaderboardData = [
-      //get when onLoad() and player click
-        { name: "Player 1", score: 100 },
-        { name: "Player 2", score: 80 },
-        { name: "Player 3", score: 70 },
-        { name: "Player 4", score: 60 },
-        { name: "Player 5", score: 50 }
-      ];
-//-----------------------------------------------------------------
-
-    // Function to populate the leaderboard with data
-  function populateLeaderboard() {
-    var leaderboardList = document.getElementById("leaderboardList");
-    leaderboardList.innerHTML = ""; // Clear previous entries
-    
-    // Loop through the leaderboardData array and create list items
-    leaderboardData.forEach(function(item, index) {
-      var listItem = document.createElement("li");
-      listItem.textContent = item.name + ": " + item.score;
-      leaderboardList.appendChild(listItem);
-    });
-  }
 
   // Call the populateLeaderboard function to initially populate the leaderboard
   populateLeaderboard();
