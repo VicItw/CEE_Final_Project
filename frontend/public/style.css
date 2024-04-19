@@ -3,9 +3,12 @@
 body {
   font-family: "Mitr", sans-serif;
   background:  linear-gradient(to top, #facece, #ffffff);
+  background-image: url(./res/Background2.png);
+  background-repeat: no-repeat;
   margin: 0;
   padding: 0;
   height: 100vh;
+  overflow: hidden;
 }
 
 .container {
@@ -14,6 +17,7 @@ body {
 
 #cps {
   margin-bottom: 100em;
+  color: #ff9c56;
 }
 
 #pop-img{
@@ -27,13 +31,16 @@ body {
 #app-name {
   font-size: 10vh;
   font-weight: bold;
-  margin: 1% 0% -3% 0%;
+  margin: 2.5% 0% -3% 0%;
   text-align: center;
+  color: #4f000b;
+
 }
 
 #player-score {
   font-size: 8vh;
   margin-bottom:  0%;
+  color: #ce4257;
 }
 
 #cps {
@@ -42,48 +49,130 @@ body {
 }
 
 .side-buttons {
-  position: fixed;
-  top: 55%;
-  transform: translateY(-50%);
-  left: 0;
-  padding: 20px;
-  background-color: #f1f1f1;
+  position: absolute;
+  top: 77%;
+  /* transform: translateY(-50%); */
+  left: 50px;
+  padding: 3px;
+  width: 700px;
+  height: 160px;
+  /* background-color: #f1f1f1; */
 }
 
 .side-buttons button {
-  display: block;
-  margin-bottom: 10px;
-  width: 12em;
-  max-width: 50vw;
-  height: 9vh;
-  max-height: 100px;
-  padding: 10px;
-  border: none;
-  background-color: #ff76b4;
+  position: relative;
+  vertical-align: middle;
+  display: inline;
+  margin: 5px;
+  width: 160px;
+  /* max-width: 50vw; */
+  height: 160px;
+  /* max-height: 50vh; */
+  /* padding: 10px; */
+  /* border: none; */
+  border: #fffcf7;
+  border-style: solid;
+
   color: white;
+  font-size: 18px;
+  font-family: "Mitr";
   text-align: center;
   text-decoration: none;
-  font-size: 16px;
+
   cursor: pointer;
+  border-radius: 100%;
+  /* background:url(./res/WhiteCat.png) no-repeat; */
 }
 
-.side-buttons button:hover {
+/* .side-buttons button:hover {
   background-color: #d0357b;
+} */
+
+#cat-button {
+  background-color: #ff9b54;
+}
+.side-buttons #cat-button:hover {
+  background-color: #f87a20 !important;
+}
+
+#bonk-button {
+  background-color: #ff7f51;
+}
+.side-buttons #bonk-button:hover {
+  background-color: #fd642c !important;
+}
+
+#x10 {
+  background-color: #ce4257!important;
+}
+.side-buttons #x10:hover {
+  background-color: #d1253f !important;
 }
 
 .leaderboard {
-  width: 20em;
-  max-width: 20vw;
-  height: 15em;
-  max-height: 40vh;
+  width: 308px;
+  max-width: 325px;
+  height: 1000px;
+  max-height: 1000px;
   position: fixed;
-  top: 40%;
-  transform: translateY(-5%);
-  right: 0;
-  padding: 1em;
-  background-color: #fcc8e4;
+  top: 57%;
+  /* transform: translateY(-5%); */
+  right: 5%;
+  padding-left: 1.8vh;
+  padding-right: 1.8vh;
+  font-size: 30px;
+  text-align: justify;
+  /* padding-top: 0.2vh; */
+  background-color: #f3f3f3;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  
 }
+#leaderboardhead {
+  position: relative;
+  right: 20px; 
+  padding: 0;
+  margin: 0;
+  margin-bottom: 30px;
+  /* padding-bottom: 5%; */
+
+  width: 350px;
+  height: 75px;
+
+  background-color: #720026;
+  border-radius: 10px;
+
+  font-size: 45px;
+  text-align: center;
+  color: white;
+}
+.leaderboard li:first-child{
+  background-color: #f3ec78;
+  background-image: linear-gradient(45deg, #ffd518, #af4261);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.leaderboard li:nth-child(2){
+  background-color: #cccbbb;
+  background-image: linear-gradient(45deg, #bebebe, #575757);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.leaderboard li:nth-child(3){
+  background-color: #c4735f;
+  background-image: linear-gradient(45deg, #ee9c66, #8a4106);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 
 .leaderboard h2 {
   margin-bottom: 10px;
@@ -100,13 +189,13 @@ body {
 }
 
 
-#x10 {
+/* #x10 {
   padding: 10px 20px;
   background-color: #007bff;
   color: #fff;
   border: none;
   cursor: pointer;
-}
+} */
 
 .login-container {
   width: 15vw;
@@ -142,14 +231,18 @@ body {
 }
 
 .login-container button {
+  display: inline-block;
+  text-align: center;
+  
   margin-bottom: 10px;
+  margin-top: 10px;
   width: 7vw;
   max-width: 50vw;
   height: 5vh;
   max-height: 100px;
   padding: 10px;
   border: none;
-  background-color: #ff76b4;
+  background-color: #ce4257;
   color: white;
   text-align: center;
   text-decoration: none;
@@ -158,7 +251,7 @@ body {
 }
 
 .login-container button:hover {
-  background-color: #d0357b;
+  background-color: #ce1a35;
 }
 
 .user-container button {
@@ -169,7 +262,7 @@ body {
   max-height: 100px;
   padding: 10px;
   border: none;
-  background-color: #ff76b4;
+  background-color: #ce4257;
   color: white;
   text-align: center;
   text-decoration: none;
@@ -178,7 +271,7 @@ body {
 }
 
 .user-container button:hover {
-  background-color: #d0357b;
+  background-color: #ce1a35;
 }
 
 .user-container {
@@ -188,7 +281,9 @@ body {
   max-width: 30vw;
   padding: 10px;
 }
-
+#player-user {
+  margin-left: 25px;
+}
 
 /* .form-group {
   margin-bottom: 20px;
