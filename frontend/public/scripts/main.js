@@ -97,12 +97,12 @@ window.onload = function() {
     // Update the countdown every second during active duration
     var activeCountdownInterval = setInterval(function() {
         remainingTime--;
-        btn.textContent = "Active (" + remainingTime + "s)";
+        btn.textContent = "x10 Active (" + remainingTime + "s)";
         if (remainingTime <= 0) {
         clearInterval(activeCountdownInterval); // Stop the countdown when it reaches zero
         btn.disabled = true;
         hit = 1;
-        btn.textContent = "Cooldown (" + (cooldown / 1000) + "s)";
+        btn.textContent = "x10 Cooldown (" + (cooldown / 1000) + "s)";
         btn.style.backgroundColor = "gray"; // Change the color to gray during cooldown
         
         // Set the cooldown duration countdown
