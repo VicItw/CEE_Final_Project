@@ -80,7 +80,7 @@ body {
   top: 40%;
   transform: translateY(-5%);
   right: 0;
-  padding: 1vh;
+  padding: 1em;
   background-color: #fcc8e4;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
