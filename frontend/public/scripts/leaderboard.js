@@ -12,7 +12,7 @@ export async function populateLeaderboard() {
     // Loop through the leaderboardData array and create list items
     leaderboardData.forEach(function(user, index) {
         var listUser = document.createElement("li");
-        listUser.textContent = index+1 + ") " + user.name + ": " + user.score;
+        listUser.textContent = index + 1 + ") " + user.name + ": " + user.score;
         leaderboardList.appendChild(listUser);
     });
 }
