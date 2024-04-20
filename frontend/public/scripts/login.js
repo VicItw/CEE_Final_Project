@@ -10,6 +10,7 @@ const playerGroup = document.getElementById("player-group");
 const logoutBtn = document.getElementById("logout-btn")
 const count = document.getElementById("player-score");
 var player = undefined;
+const showScore = document.getElementById("show-score");
 
 
 export function showLoginInterface() {
@@ -53,8 +54,9 @@ export async function login() {
         else if (password === correctPassword) {
             alert("Welcome back " + username+ ".");
             count.innerHTML = user.score;
+            showScore.innerHTML = user.score;
             playerUser.textContent = "Logged in as : " + username;
-            playerGroup.textContent = "Group : A";
+            playerGroup.textContent = "";
             logoutBtn.style.display = "block"
             loginModal.style.display = "none";
             loginBtn.textContent = "Login";

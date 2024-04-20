@@ -8,7 +8,7 @@ window.onload = function() {
     var img = document.getElementById("pop-img");
     var img_path = document.getElementById("pop-img").src; 
     var pop = document.getElementById("pop-img").src; 
-    const count = document.getElementById("player-score");
+    var count = document.getElementById("player-score");
     var clickCount = 0;
     var currentCPS = 0;
     var audio = new Audio("res/catAudio.mp3");
@@ -16,6 +16,7 @@ window.onload = function() {
     var hit = 1;
     var cpsCounter = document.getElementById("cps");
     var current = "popcat"
+    const showScore = document.getElementById("show-score");
     
 
     // on click
@@ -50,6 +51,7 @@ window.onload = function() {
         var score = parseInt(count.textContent);
         score += hit;
         count.innerHTML = score;
+        showScore.innerHTML = score;
     }
 
 

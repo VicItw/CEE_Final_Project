@@ -15,7 +15,7 @@
 
     <!-- socre + image -->
     <div class = "container">
-      <p id="player-score">0</p>
+      <p id="show-score">0</p>
       <p id="cps"> 0 cps</p>
       <img src="res\Popcat_idle.png" alt="Popcat-idle" id ="pop-img" height="600px">
     </div>
@@ -71,11 +71,11 @@
           <label for="password">Password:</label>
           <input type="password" id="register-password" name="password" required>
           <button type="submit" id = "RegisterSubmitbtn" >Register</button>
+          <p id="player-score" style="display : none"> 0 </p>
         </form>
       </div> 
     </div>
     
-
     <!-- pre-load images -->
     <img src="res\Popcat_idle.png" alt="Preload cat idle" style="display: none;">
     <img src="res\Popcat_pop.png" alt="Preload cat pop" style="display: none;">

@@ -9,6 +9,7 @@ body {
   padding: 0;
   height: 100vh;
   overflow: hidden;
+  touch-action: manipulation;
 }
 
 .container {
@@ -25,6 +26,7 @@ body {
   height: auto;
   display: block; /* Remove extra space below inline images */
   margin: 0 auto; /* Center the image horizontally */
+  touch-action: manipulation;
 
 }
 
@@ -37,7 +39,7 @@ body {
 
 }
 
-#player-score {
+#show-score {
   font-size: 8vh;
   margin-bottom:  0%;
   color: #ce4257;
