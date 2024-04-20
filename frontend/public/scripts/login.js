@@ -6,6 +6,7 @@ const registerBtn = document.getElementById("register-btn");
 const loginModal = document.getElementById("login-modal");
 const RegisterModal = document.getElementById("register-modal");
 const playerUser = document.getElementById("player-user"); 
+const playerGroup = document.getElementById("player-group"); 
 const logoutBtn = document.getElementById("logout-btn")
 const count = document.getElementById("player-score");
 var player = undefined;
@@ -53,6 +54,7 @@ export async function login() {
             alert("Logged in.")
             count.innerHTML = user.score;
             playerUser.textContent = "Logged in as : " + username;
+            playerGroup.textContent = "";
             logoutBtn.style.display = "block"
             loginModal.style.display = "none";
             loginBtn.textContent = "Login";
