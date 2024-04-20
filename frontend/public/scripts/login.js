@@ -97,12 +97,13 @@ export async function register() {
 }
 
 export async function update() {
+    populateLeaderboard();
     if (player === undefined) return;
     var score = parseInt(count.textContent);
     // console.log("update user : ", player, " score : ", score);
     updateScore(player, score);
-    populateLeaderboard();
 }
+
 
 export async function refreshPage() {
     location.reload();
