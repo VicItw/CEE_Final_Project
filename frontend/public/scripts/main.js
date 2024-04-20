@@ -48,6 +48,7 @@ window.onload = function() {
         update()
     }, 1000); // Update CPS every 1000ms (1 second)
 
+
     function increaseScore(hit) {
         score = parseInt(count.textContent);
         score += hit;
