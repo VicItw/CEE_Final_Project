@@ -6,8 +6,10 @@ const router = express.Router();
 
 router.get("/rank", userController.getRank); // for leaderboard
 router.get("/:user", userController.getUser); // retrieve score
-router.get("/", userController.getUsers);
+router.get("/rankInGroup", groupController.getRankInGroup);
 router.post("/updateScore", userController.updateScore); // update score
 router.post("/createUser", userController.createUser); // register new user
+
+
 
 export default router;

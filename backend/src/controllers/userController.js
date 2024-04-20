@@ -1,4 +1,5 @@
 import User from "../models/userModel.js";
+import Group from "../models/groupModel.js";
 
 export const getUser = async (req, res) => { //ถ้าหาเจอ return json หาไม่เจอ return 400
   const user = await User.find({name: req.params.user});
@@ -19,25 +20,47 @@ export const getRank = async (req, res) => {
   }
 }
 
+// export const updateScore = async (req, res) => {
+//   try {
+//     const user = await User.updateOne({name: req.body.name} , {$set: {score : req.body.score} } );
+//     res.status(200).json({ message: "OK" });
+//   } catch (err) {
+//     res.status(500).json({ error: "Internal server error." });
+//   }
+// };
+
 export const updateScore = async (req, res) => {
   try {
     const user = await User.updateOne({name: req.body.name} , {$set: {score : req.body.score} } );
+    const group = await Group.updateOne({group: req.body.group}, { $inc: { score : req.body.score }});
     res.status(200).json({ message: "OK" });
   } catch (err) {
     res.status(500).json({ error: "Internal server error." });
   }
 };
 
+// export const createUser = async (req, res) => {
+//   const user = await User.find({name : req.body.name});
+//   if(user.length > 0){
+//     res.status(401).json({error : "This Username is available"});
+//   }
+//   else{
+//     const newUser = new User(req.body);
+//     await newUser.save();
+//     res.status(200).json({ message: "OK" });
+//   }
+// };
+
 export const createUser = async (req, res) => {
-    const user = await User.find({name : req.body.name});
-    if(user.length > 0){
-      res.status(401).json({error : "This Username is available"});
-    }
-    else{
-      const newUser = new User(req.body);
-      await newUser.save();
-      res.status(200).json({ message: "OK" });
-    }
+  const user = await User.find({name : req.body.name});
+  if(user.length > 0){
+    res.status(401).json({error : "This Username is available"});
+  }
+  else{
+    const newUser = new User(req.body);
+    await newUser.save();
+    res.status(200).json({ message: "OK" });
+  }
 };
 
 
@@ -45,3 +68,12 @@ export const getUsers = async (req, res) => {
   const users = await User.find();
   res.status(200).json(users);
 };
+
+export const getRankInGroup = async (req, res) => {
+  try {
+      const top = await User.find({group : req.body.group},{ score: -1 });
+  }
+  catch (err) {
+    res.status(500).json({ error: "Internal server error." });
+  }
+}

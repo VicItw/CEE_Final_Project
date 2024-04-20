@@ -5,16 +5,12 @@ export async function getUser(name) {
   return user[0]; //will return error if user is not available
 }
 
-export async function getUsers() {
-  const users = await fetch(`${BACKEND_URL}/users`).then((r) => r.json());
-  return users;
-}
-
-export async function createUser(name,password) {
+export async function createUser(name,password,group) {
   const item = {
     "name" : name,
     "password" : password,
     "score" : 0,
+    "group" : group
   }
   const res = await fetch(`${BACKEND_URL}/users/createUser`, {
     method: "POST",
@@ -31,10 +27,21 @@ export async function getRank() {
   return top;
 }
 
-export async function updateScore(name,score) {
+export async function getGroupRank() {
+  const top = await fetch(`${BACKEND_URL}/group/rank`).then((res) => res.json());
+  return top;
+}
+
+export async function getRankInGroup() {
+  const top = await fetch(`${BACKEND_URL}/users/rankInGroup`).then((res) => res.json());
+  return top;
+}
+
+export async function updateScore(name,score,group) {
   const item = {
     "name" : name,
-    "score" : score
+    "score" : score,
+    "group" : group
   }
   const res = await fetch(`${BACKEND_URL}/users/updateScore`, {
     method: "POST",
