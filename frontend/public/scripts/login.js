@@ -11,7 +11,7 @@ const logoutBtn = document.getElementById("logout-btn")
 const count = document.getElementById("player-score");
 var player = undefined;
 const showScore = document.getElementById("show-score");
-
+var score = 0;
 
 export function showLoginInterface() {
     if (loginBtn.textContent == "Login") {
@@ -53,6 +53,7 @@ export async function login() {
         if (password !== correctPassword) alert("Incorrect Password.");
         else if (password === correctPassword) {
             alert("Welcome back " + username+ ".");
+            score = user.score;
             count.innerHTML = user.score;
             showScore.innerHTML = user.score;
             playerUser.textContent = "Logged in as : " + username;

@@ -14,6 +14,7 @@ window.onload = function() {
     var audio = new Audio("res/catAudio.mp3");
     var preloadaudio = new Audio("res/bonkAudio.mp3");
     var hit = 1;
+    var score = 0;
     var cpsCounter = document.getElementById("cps");
     var current = "popcat"
     const showScore = document.getElementById("show-score");
@@ -48,7 +49,7 @@ window.onload = function() {
     }, 1000); // Update CPS every 1000ms (1 second)
 
     function increaseScore(hit) {
-        var score = parseInt(count.textContent);
+        score = parseInt(count.textContent);
         score += hit;
         count.innerHTML = score;
         showScore.innerHTML = score;
