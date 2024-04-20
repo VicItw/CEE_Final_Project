@@ -9,7 +9,6 @@ const RegisterModal = document.getElementById("register-modal");
 const playerUser = document.getElementById("player-user"); 
 const playerGroup = document.getElementById("player-group"); 
 const logoutBtn = document.getElementById("logout-btn")
-const count = document.getElementById("player-score");
 var player = undefined;
 const showScore = document.getElementById("show-score");
 
@@ -54,7 +53,6 @@ export async function login() {
         else if (password === correctPassword) {
             alert("Welcome back " + username+ ".");
             setScore(user.score);
-            count.innerHTML = user.score;
             showScore.innerHTML = user.score;
             playerUser.textContent = "Logged in as : " + username;
             playerGroup.textContent = "";
