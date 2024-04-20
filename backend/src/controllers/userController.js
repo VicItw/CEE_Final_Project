@@ -68,12 +68,3 @@ export const getUsers = async (req, res) => {
   const users = await User.find();
   res.status(200).json(users);
 };
-
-export const getRankInGroup = async (req, res) => {
-  try {
-      const top = await User.find({group : req.body.group},{ score: -1 });
-  }
-  catch (err) {
-    res.status(500).json({ error: "Internal server error." });
-  }
-}

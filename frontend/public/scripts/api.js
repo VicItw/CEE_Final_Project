@@ -32,8 +32,8 @@ export async function getGroupRank() {
   return top;
 }
 
-export async function getRankInGroup() {
-  const top = await fetch(`${BACKEND_URL}/users/rankInGroup`).then((res) => res.json());
+export async function getRankInGroup(group) {
+  const top = await fetch(`${BACKEND_URL}/group/rankInGroup/${group}`).then((res) => res.json());
   return top;
 }
 

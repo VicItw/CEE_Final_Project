@@ -1,5 +1,5 @@
 import Group from "../models/groupModel.js";
-
+import User from "../models/userModel.js";
 export const getGroupRank = async (req, res) => { //ถ้าหาเจอ return json หาไม่เจอ return 400
     try {
         const rankedGroup = await Group.find().sort({ score: -1 }).limit(10);
@@ -16,3 +16,10 @@ export const createGroup = async (req, res) => { //ถ้าหาเจอ retu
     res.status(200).json({ message: "OK" });
   
 };
+
+export const getRankInGroup = async (req, res) => {
+    
+    const top = await User.find({group : req.params.group}).sort({ score: -1 }).limit(10);
+    res.status(200).json(top);
+
+}
