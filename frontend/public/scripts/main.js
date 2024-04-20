@@ -2,19 +2,22 @@
 import { populateLeaderboard } from "./leaderboard.js";
 import { showLoginInterface, showRegisterInterface, login, register, update, refreshPage} from "./login.js";
 
+export let score = 0;
+
+export function setScore(newscore) {
+  score = newscore;
+}
 
 window.onload = function() {
   // load in all the basic variables
     var img = document.getElementById("pop-img");
     var img_path = document.getElementById("pop-img").src; 
     var pop = document.getElementById("pop-img").src; 
-    var count = document.getElementById("player-score");
     var clickCount = 0;
     var currentCPS = 0;
     var audio = new Audio("res/catAudio.mp3");
     var preloadaudio = new Audio("res/bonkAudio.mp3");
     var hit = 1;
-    var score = 0;
     var cpsCounter = document.getElementById("cps");
     var current = "popcat"
     const showScore = document.getElementById("show-score");
@@ -50,10 +53,8 @@ window.onload = function() {
 
 
     function increaseScore(hit) {
-        score = parseInt(count.textContent);
-        score += hit;
-        count.innerHTML = score;
-        showScore.innerHTML = score;
+        setScore(score + hit);
+        showScore.innerHTML = parseInt(score);
     }
 
 
