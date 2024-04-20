@@ -12,6 +12,7 @@ window.onload = function() {
     var clickCount = 0;
     var currentCPS = 0;
     var audio = new Audio("res/catAudio.mp3");
+    var preloadaudio = new Audio("res/bonkAudio.mp3");
     var hit = 1;
     var cpsCounter = document.getElementById("cps");
     var current = "popcat"
