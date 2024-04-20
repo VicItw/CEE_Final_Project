@@ -51,10 +51,10 @@ export async function login() {
         const correctPassword = user.password
         if (password !== correctPassword) alert("Incorrect Password.");
         else if (password === correctPassword) {
-            alert("Logged in.")
+            alert("Welcome back " + username+ ".");
             count.innerHTML = user.score;
             playerUser.textContent = "Logged in as : " + username;
-            playerGroup.textContent = "";
+            playerGroup.textContent = "Group : A";
             logoutBtn.style.display = "block"
             loginModal.style.display = "none";
             loginBtn.textContent = "Login";
