@@ -125,8 +125,8 @@ body {
 .leaderboard {
   width: 15vw;
   max-width: 500vw;
-  height: 100vh;
-  max-height: 100vh;
+  height: 60vh;
+  max-height: 60vh;
   position: fixed;
   top: 40%;
   /* transform: translateY(-5%); */
@@ -144,26 +144,24 @@ body {
 
 }
 .leaderboard ol {
-  display: grid;
+  /* display: grid; */
   list-style-type: none; /* Remove default numbering */
   padding: 0; /* Remove default padding */
-  overflow: hidden;
-
+  overflow-y: auto ;
+  overflow-x: hidden ;
   /* height: 420px; */
   height: 40vh;
-  grid-template-columns: 1fr;
+  /* grid-template-columns: 1fr;
   grid-template-rows: repeat(auto-fit, minmax(3vh, 1fr));
   grid-auto-rows: 0px;
-  grid-auto-columns: 0px;
+  grid-auto-columns: 0px; */
   list-style: none;
 }
 
 .leaderboard li {
-  
-  white-space: nowrap;
   overflow: hidden;
+  white-space: nowrap;
   text-overflow: ellipsis;
-  
 }
 
 .leaderboardhead {
@@ -239,7 +237,7 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text; */
-   color: silver; 
+   color: rgb(153, 153, 153); 
 }
 
 .leaderboard li:nth-child(3){
@@ -262,6 +260,8 @@ body {
   list-style: none;
   padding: 0;
   margin: 0;
+  /* margin-top: 0;
+  font-size: 2vh; */
 }
 
 .leaderboard li {
@@ -411,6 +411,7 @@ body {
  }
  #pop-img{
   max-width: 60vw;
+  /* max-height: 40vh; */
   height: auto;
   display: block; /* Remove extra space below inline images */
   margin: 0 auto; /* Center the image horizontally */
