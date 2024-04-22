@@ -1,4 +1,4 @@
-import { createUser, getUser, updateScore } from "./api.js";
+import { checkPassword, createUser, getUser, updateScore } from "./api.js";
 import { populateLeaderboard } from "./leaderboard.js";
 import { score, setScore } from "./main.js";
 
@@ -47,12 +47,9 @@ export async function login() {
     console.log(username);
     console.log(password);
     try {
-        const user = await getUser(username);
-        console.log(user)
-        const correctPassword = user.password
-        if (password !== correctPassword) alert("Incorrect Password.");
-        else if (password === correctPassword) {
-            alert("Welcome back " + username+ ".");
+        const correctPassword = await checkPassword(username, password);       
+        if (correctPassword) {
+            const user = await getUser(username);
             setScore(user.score);
             showScore.innerHTML = score;
             group = user.group;
@@ -69,7 +66,6 @@ export async function login() {
         passwordField.value = "";
     }
     catch (error) {
-        alert("username not found");
         usernameField.value = "";
         passwordField.value = "";
     }

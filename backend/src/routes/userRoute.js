@@ -6,6 +6,7 @@ const router = express.Router();
 
 router.get("/rank", userController.getRank); // for leaderboard
 router.get("/:user", userController.getUser); // retrieve score
+router.post("/login" ,userController.login) // for login
 router.post("/updateScore", userController.updateScore); // update score
 router.post("/createUser", userController.createUser); // register new user
 
