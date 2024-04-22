@@ -12,22 +12,13 @@ export const getUser = async (req, res) => { //ถ้าหาเจอ return j
 
 export const getRank = async (req, res) => {
   try {
-    const rankedUser = await User.find().sort({ score: -1 }).limit(10);
+    const rankedUser = await User.find({}, { name: 1, score: 1 }).sort({ score: -1 }).limit(100);
     res.status(200).json(rankedUser)
   }
   catch (err) {
     res.status(500).json({ error: "Internal server error." });
   }
 }
-
-// export const updateScore = async (req, res) => {
-//   try {
-//     const user = await User.updateOne({name: req.body.name} , {$set: {score : req.body.score} } );
-//     res.status(200).json({ message: "OK" });
-//   } catch (err) {
-//     res.status(500).json({ error: "Internal server error." });
-//   }
-// };
 
 export const updateScore = async (req, res) => {
   try {
