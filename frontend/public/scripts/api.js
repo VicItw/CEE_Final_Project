@@ -2,7 +2,11 @@ import { BACKEND_URL } from "./config.js";
 
 export async function getUser(name) {
   const user = await fetch(`${BACKEND_URL}/users/${name}`).then((res) => res.json());
-  return user[0]; //will return error if user is not available
+  return {
+    "name" : user[0].name,
+    "score" : user[0].score,
+    "password" : user[0].password, // must be check on the backend
+  }; // if user doest exist => return undefined. 
 }
 
 export async function createUser(name,password,group) {
