@@ -2,7 +2,7 @@ import User from "../models/userModel.js";
 import Group from "../models/groupModel.js";
 
 export const getUser = async (req, res) => { //ถ้าหาเจอ return json หาไม่เจอ return 400
-  const user = await User.find({name: req.params.user},  { name: 1, score: 1 });
+  const user = await User.find({name: req.params.user},  { name: 1, score: 1, group :1 });
   if(user.length === 0){
     res.status(400).json({error : "This Username is not available"});
   }
