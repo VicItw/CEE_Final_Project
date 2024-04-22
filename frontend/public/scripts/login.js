@@ -10,6 +10,7 @@ const playerUser = document.getElementById("player-user");
 const playerGroup = document.getElementById("player-group"); 
 const logoutBtn = document.getElementById("logout-btn")
 var player = undefined;
+var group = undefined;
 const showScore = document.getElementById("show-score");
 
 export function showLoginInterface() {
@@ -53,9 +54,12 @@ export async function login() {
         else if (password === correctPassword) {
             alert("Welcome back " + username+ ".");
             setScore(user.score);
-            showScore.innerHTML = user.score;
+            showScore.innerHTML = score;
+            group = user.group;
             playerUser.textContent = "Logged in as : " + username;
-            playerGroup.textContent = "";
+            if (group === undefined)
+                playerGroup.textContent = "";
+            else playerGroup.textContent = "Group " + group;
             logoutBtn.style.display = "block"
             loginModal.style.display = "none";
             loginBtn.textContent = "Login";
@@ -74,8 +78,10 @@ export async function login() {
 export async function register() {
     const usernameField = document.getElementById("register-username");
     const passwordField = document.getElementById("register-password");
+    const groupSelect = document.getElementById("register-group");
     const username = usernameField.value;
     const password = passwordField.value;
+    const groupReg = groupSelect.value;
     console.log(username);
     console.log(password);
     try {
@@ -84,7 +90,7 @@ export async function register() {
     }
 
     catch (error) {
-        createUser(username,password);
+        createUser(username, password, groupReg);
         alert("Registered");
         RegisterModal.style.display = "none";
         registerBtn.textContent = "Register";
@@ -95,8 +101,14 @@ export async function register() {
 
 export async function update() {
     populateLeaderboard();
-    if (player === undefined) return;
-    updateScore(player, score);
+    if (group !== undefined) {
+        updateScore(player, score, group);
+        console.log("group " + group + " updated.");  
+    }
+
+    else if (player === undefined) return;
+        updateScore(player, score);
+    
 }
 
 

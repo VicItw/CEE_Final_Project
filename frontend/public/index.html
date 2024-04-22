@@ -31,9 +31,37 @@
 
     <!-- Leaderboard -->
     <div class="leaderboard">
-      <h2 id="leaderboardhead">Leaderboard</h2>
+      <div class="leaderboardhead">
+        <h2>Leaderboard</h2>
+        <!-- <label for="group">Group:</label> -->
+          <select id="leaderboard-filter"> 
+            <option value="Users">All users</option>
+            <option value="Groups">All Groups</option>
+            <option value="A">Group A</option>
+            <option value="B">Group B</option>
+            <option value="C">Group C</option>
+            <option value="Dog">Group Dog</option>
+            <option value="E">Group E</option>
+            <option value="F">Group F</option>
+            <option value="G">Group G</option>
+            <option value="H">Group H</option>
+            <option value="J">Group J</option>
+            <option value="K">Group K</option>
+            <option value="L">Group L</option>
+            <option value="M">Group M</option>
+            <option value="N">Group N</option>
+            <option value="O">Group O</option>
+            <option value="P">Group P</option>
+            <option value="Q">Group Q</option>
+            <option value="R">Group R</option>
+            <option value="S">Group S</option>
+            <option value="S">Group T</option>
+          </select>
+          <p id="total"> total score :</p>
+      </div>
+      
       <ol id="leaderboardList">
-        <!-- Leaderboard items will be added here dynamically -->
+          <!-- Leaderboard items will be added here dynamically -->
       </ol>
     </div>
 
@@ -67,6 +95,29 @@
         <form id="register-form">
           <label for="username">Username:</label>
           <input type="text" id="register-username" name="username" required>
+          <label for="group">Group:</label>
+          <select id="register-group" name="group" required> 
+            <option value="" disabled selected>Select a group</option>
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="Dog">Dog</option>
+            <option value="E">E</option>
+            <option value="F">F</option>
+            <option value="G">G</option>
+            <option value="H">H</option>
+            <option value="J">J</option>
+            <option value="K">K</option>
+            <option value="L">L</option>
+            <option value="M">M</option>
+            <option value="N">N</option>
+            <option value="O">O</option>
+            <option value="P">P</option>
+            <option value="Q">Q</option>
+            <option value="R">R</option>
+            <option value="S">S</option>
+            <option value="S">T</option>
+          </select>
           <label for="password">Password:</label>
           <input type="password" id="register-password" name="password" required>
           <button type="submit" id = "RegisterSubmitbtn" >Register</button>
