@@ -31,10 +31,11 @@ export const getRank = async (req, res) => {
 
 export const updateScore = async (req, res) => {
   try {
-    const oldScore = User.find({name: req.body.name}).score;
+    const oldScore = await User.findOne({name : req.body.name});
     const user = await User.updateOne({name: req.body.name} , {$set: {score : req.body.score} } );
-    const group = await Group.updateOne({group: req.body.group}, { $inc: { score : req.body.score-oldScore}});
+    const group = await Group.updateOne({group: req.body.group}, { $inc: { score : req.body.score-oldScore.score}});
     res.status(200).json({ message: "OK" });
+
   } catch (err) {
     res.status(500).json({ error: "Internal server error." });
   }
