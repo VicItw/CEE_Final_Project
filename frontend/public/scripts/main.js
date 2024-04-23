@@ -98,7 +98,7 @@ window.onload = function() {
     btn.textContent = "x10 Active (" + remainingTime + "s)";
     
     // Change the button color when it's active
-    btn.style.backgroundColor = "green"; // Change the color to green
+    btn.style.backgroundColor = "#ff8b9c"; // Change the color to green
     
     // Update the countdown every second during active duration
     var activeCountdownInterval = setInterval(function() {
@@ -120,7 +120,7 @@ window.onload = function() {
             clearInterval(cooldownCountdownInterval); // Stop the cooldown countdown when it reaches zero
             btn.disabled = false;
             btn.textContent = "x10 Ready";
-            btn.style.backgroundColor = "#007bff"; // Reset the color to default after cooldown
+            btn.style.backgroundColor = "#ce4257"; // Reset the color to default after cooldown
             }
         }, 1000);
         }

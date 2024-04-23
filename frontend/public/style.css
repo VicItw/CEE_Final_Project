@@ -116,10 +116,10 @@ body {
 }
 
 #x10 {
-  background-color: #ce4257!important;
+  background-color: #ce4257;
 }
 .side-buttons #x10:hover {
-  background-color: #d1253f !important;
+  background-color: #d1253f;
 }
 
 .leaderboard {
@@ -345,15 +345,10 @@ body {
 /* Responsive */
 
 /*iPad and big iPhone*/
-@media (max-width: 1024px){
-  #pop-image{
-    width: 30vw;
-    height: auto;
-  }
-}
 
 
-@media (max-width: 900px) {
+
+@media (max-width: 1125px) {
   .login-container button {
     display: inline-block;
     text-align: center;

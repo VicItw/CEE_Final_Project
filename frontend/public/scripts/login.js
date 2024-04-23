@@ -99,12 +99,9 @@ export async function update() {
     populateLeaderboard();
     if (group !== undefined) {
         updateScore(player, score, group);
-        console.log("group " + group + " updated.");  
     }
-
     else if (player === undefined) return;
-        updateScore(player, score);
-    
+    updateScore(player, score);
 }
 
 
