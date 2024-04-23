@@ -345,10 +345,15 @@ body {
 /* Responsive */
 
 /*iPad and big iPhone*/
+@media (max-width: 1024px){
+  #pop-image{
+    width: 30vw;
+    height: auto;
+  }
+}
 
 
-
-@media (max-width: 1125px) {
+@media (max-width: 900px) {
   .login-container button {
     display: inline-block;
     text-align: center;
